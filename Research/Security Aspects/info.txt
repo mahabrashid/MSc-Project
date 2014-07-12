@@ -1,0 +1,1 @@
+Adding this file in order to pick up this directory location (as empty directories are ignored in git staging process).
