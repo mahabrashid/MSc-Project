@@ -1,6 +1,9 @@
 *~*
 *.DS_Store
-*bin/*
-*.settings
-*.project
-*.classpath
+
+# A slash followed by two consecutive asterisks then a slash matches zero or more directories. For example, "a/**/b" matches "a/b", "a/x/b", "a/x/y/b" and so on.
+
+Test Applications/**/bin/*
+/**/.settings
+/**/.project
+/**/.classpath
