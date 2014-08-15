@@ -7,3 +7,4 @@ Test Applications/**/bin/*
 /**/.settings
 /**/.project
 /**/.classpath
+*.metadata*
