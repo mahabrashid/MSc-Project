@@ -18,7 +18,7 @@ public class ServerSideProgram {
 		}
 
 		try {
-			RemoteJobInterface jobExecutor = new RemoteJobExecutor();
+			RemoteJobExecutor jobExecutor = new RemoteJobExecutor();
 
 			RemoteJobInterface stub = (RemoteJobInterface) UnicastRemoteObject
 					.exportObject(jobExecutor, 0);
