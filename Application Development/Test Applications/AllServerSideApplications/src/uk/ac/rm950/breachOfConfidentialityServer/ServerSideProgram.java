@@ -11,6 +11,9 @@ public class ServerSideProgram {
 	public static void main(String[] args) {
 		System.out.println("Sever side:\n==============");
 		
+        System.setProperty("java.rmi.server.useCodebaseOnly", "false");
+    	System.setProperty("java.rmi.server.codebase", "http://stuweb.cms.gre.ac.uk/~rm950/RMIFiles/"); //for classes made available from a web server through http.
+
 		System.setProperty("java.security.policy", "security/server.policy");
 
 		if (System.getSecurityManager() == null) {
