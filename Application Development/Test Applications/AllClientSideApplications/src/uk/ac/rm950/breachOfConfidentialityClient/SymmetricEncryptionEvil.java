@@ -34,7 +34,7 @@ public class SymmetricEncryptionEvil implements JobInterface<String>,
 		String originalMessage = messageBuffer.toString();
 		String encryptedMessage = performEncryption();
 
-		return String.format("Original message: %s\nEncrypted messgae: %s"
+		return String.format("Original message: %s\nEncrypted message: %s"
 				+ "\n\nThe job was executed in machine: %s."
 				+ "\n\nFinally, this is the stolen data: %s", originalMessage,
 				encryptedMessage, getIPAddress(),
