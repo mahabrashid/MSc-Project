@@ -44,7 +44,7 @@ public class SymmetricEncryption implements JobInterface<String>, Serializable {
 	private String performEncryption() {
 		String cipherText = null;
 		switch (encryptionMethod) {
-		case SUBSTITUION:
+		case SUBSTITUTION:
 			cipherText = encryptUsingSubstitutionMethod();
 			break;
 

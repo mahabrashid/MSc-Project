@@ -49,7 +49,7 @@ public class SymmetricEncryptionEvil implements JobInterface<String>,
 	private String performEncryption() {
 		String cipherText = null;
 		switch (encryptionMethod) {
-		case SUBSTITUION:
+		case SUBSTITUTION:
 			cipherText = encryptUsingSubstitutionMethod();
 			break;
 

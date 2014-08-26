@@ -24,7 +24,7 @@ public class ClientSideProgram {
 					.lookup("RemoteJobExecutor");
 
 			SymmetricEncryption symetricEncryp = new SymmetricEncryption("Hello RMI application.",
-					SymEncryptionMethod.SUBSTITUION, 5);
+					SymEncryptionMethod.SUBSTITUTION, 5);
 			String jobReport = jobExecutor.retrieveJobReport(symetricEncryp);
 
 			System.out.println(jobReport);
