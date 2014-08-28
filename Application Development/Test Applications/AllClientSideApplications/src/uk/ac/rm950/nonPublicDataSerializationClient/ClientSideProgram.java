@@ -12,7 +12,7 @@ import uk.ac.rm950.remoteInterface.RemoteEmployeeInterface;
 public class ClientSideProgram {
 
 	public static void main(String[] args) {
-		System.out.println("Sever side (" + getIPAddress() + "):");
+		System.out.println("Client side (" + getIPAddress() + "):");
 		System.out.println("=========================================");
 
 		System.out
