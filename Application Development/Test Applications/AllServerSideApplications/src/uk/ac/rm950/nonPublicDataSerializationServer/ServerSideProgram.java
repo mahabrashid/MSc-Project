@@ -1,5 +1,7 @@
 package uk.ac.rm950.nonPublicDataSerializationServer;
 
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -10,6 +12,9 @@ import uk.ac.rm950.remoteInterface.RemoteEmployeeInterface;
 public class ServerSideProgram {
 
 	public static void main(String[] args) {
+		System.out.println("Sever side (" + getIPAddress() + "):");
+		System.out.println("=========================================");
+
 		System.out
 		.println("I am a server application serving some locally instantiated objects with noble "
 				+ "intention to make necessary information available to enquiring clients to satisfy "
@@ -25,7 +30,7 @@ public class ServerSideProgram {
 		try {
 			Registry registry = LocateRegistry.createRegistry(1099);
 
-			RemoteEmployeeInterface transportingEmployee = new Employee(
+			Employee transportingEmployee = new Employee(
 					"Neeeeemo");
 			RemoteEmployeeInterface employeeStub = (RemoteEmployeeInterface) UnicastRemoteObject
 					.exportObject(transportingEmployee, 0);
@@ -51,4 +56,13 @@ public class ServerSideProgram {
 
 	}
 
+	private static String getIPAddress() {
+		String ipAddrss = null;
+		try {
+			ipAddrss = Inet4Address.getLocalHost().toString();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+		return ipAddrss;
+	}
 }

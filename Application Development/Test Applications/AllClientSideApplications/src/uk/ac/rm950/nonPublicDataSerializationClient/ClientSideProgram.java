@@ -1,5 +1,7 @@
 package uk.ac.rm950.nonPublicDataSerializationClient;
 
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -10,6 +12,9 @@ import uk.ac.rm950.remoteInterface.RemoteEmployeeInterface;
 public class ClientSideProgram {
 
 	public static void main(String[] args) {
+		System.out.println("Sever side (" + getIPAddress() + "):");
+		System.out.println("=========================================");
+
 		System.out
 				.println("I am a client application enquiring some publicly disclosable data about employee.");
 
@@ -44,4 +49,13 @@ public class ClientSideProgram {
 		}
 	}
 
+	private static String getIPAddress() {
+		String ipAddrss = null;
+		try {
+			ipAddrss = Inet4Address.getLocalHost().toString();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+		return ipAddrss;
+	}
 }
