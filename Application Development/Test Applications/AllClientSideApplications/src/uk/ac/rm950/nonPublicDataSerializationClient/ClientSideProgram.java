@@ -31,14 +31,19 @@ public class ClientSideProgram {
 					.println("\n\nReceived first employee information pack, upacking wrapper...");
 			System.out.println(transportedEmployee1.retrieveEmployee());
 			System.out
-					.println("why do I see personalIdentificationNumber? Isn't this supposed to be"
-							+ " a protected info?");
+					.println("I got more that the information I need!"
+							+ " At least the personalIdentificationNumber isn't anything meaningful.");
 
 			RemoteEmployeeInterface transportedEmployee2 = (RemoteEmployeeInterface) registry
 					.lookup("employee2");
 			System.out
 					.println("\n\nReceived second employee information pack, upacking wrapper...");
 			System.out.println(transportedEmployee2.retrieveEmployee());
+			System.out
+					.println("Why do I see personalIdentificationNumber? Isn't this supposed to be"
+							+ " a protected info?");
+			
+			System.out.println(transportedEmployee2.retrieveEmployeeRole());
 			System.out
 					.println("Whoa!!! that's a lot of private data you've disclosed there!");
 

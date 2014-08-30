@@ -35,9 +35,8 @@ public class Manager extends Employee {
 	 * @see uk.ac.rm950.nonPublicDataSerializationServer.Employee#retrieveEmployee()
 	 */
 	@Override
-	public String retrieveEmployee() throws RemoteException {
-		String employee = "{\nName: " + this.name + ";\nRole: " + this.role
-				+ ";\nPID: " + this.personalIdentificationNumber
+	public String retrieveEmployeeRole() throws RemoteException {
+		String employee = "{\nRole: " + this.role
 				+ "\nSecret info: " + this.secretInfo + "\n}";
 		return employee;
 	}

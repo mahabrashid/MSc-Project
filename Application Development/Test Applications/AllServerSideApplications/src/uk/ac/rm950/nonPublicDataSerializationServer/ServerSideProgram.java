@@ -31,14 +31,14 @@ public class ServerSideProgram {
 			Registry registry = LocateRegistry.createRegistry(1099);
 
 			Employee transportingEmployee = new Employee(
-					"Neeeeemo");
+					"Michael");
 			RemoteEmployeeInterface employeeStub = (RemoteEmployeeInterface) UnicastRemoteObject
 					.exportObject(transportingEmployee, 0);
 			registry.rebind("employee1", employeeStub);
 			System.out.println("\nExported an employee object in RemoteEmployee wrapper...");
 
 			Manager aManager = new Manager("George Loukas");
-			aManager.generatePersonalIdentificationNumber("");
+			aManager.generatePersonalIdentificationNumber("02/02/1975");
 			aManager.setSecretInfo("George's secret info.");
 			Employee employeeWrapper = aManager; // wrapped Manager object into a Employee wrapper
 													// to avoid exposing the type of the object to
